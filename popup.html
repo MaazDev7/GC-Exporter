@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GC Exporter</title>
+    <style>
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #f0f4f8;
+        --text-color: #333;
+        --success-color: #4caf50;
+        --warning-color: #ff0000;
+        --border-radius: 8px;
+        --transition: all 0.3s ease;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 300px;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      button:hover:not(:disabled) {
+        background-color: #3a7bc8;
+      }
+
+      button:disabled {
+        background-color: #a0a0a0;
+        cursor: not-allowed;
+      }
+
+      #view {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      #view:hover:not(:disabled) {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .progress {
+        display: block;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        color: var(--text-color);
+      }
+
+      #status {
+        margin-top: 10px;
+        text-align: center;
+        color: var(--success-color);
+        font-size: 0.9rem;
+      }
+
+      .warning {
+        color: var(--warning-color);
+        font-size: 0.8rem;
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>GC Extractor</h1>
+      <ol>
+        <li>Visit Google Contacts page</li>
+        <li>Click "Start" to begin extraction</li>
+        <li>Wait while emails are fetched</li>
+        <li>Click "Download" to save data</li>
+      </ol>
+      <button id="start" type="button">Start</button>
+      <button id="view" type="button">
+        Download Up to Now
+        <span class="progress" aria-live="polite">0 emails found</span>
+      </button>
+      <div id="status" aria-live="polite"></div>
+      <p class="warning">
+        Please do not close the page between the process. The process will be
+        terminated.
+      </p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
