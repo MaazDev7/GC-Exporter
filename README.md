@@ -38,7 +38,7 @@
 ├── popup.html # Extension UI
 ├── autoScroll.js # Scrolls through contacts to fetch all data
 ├── icon.png # Extension icon
-
+```
 
 ---
 
