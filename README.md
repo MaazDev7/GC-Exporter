@@ -75,5 +75,3 @@
 - Do **not close** the Google Contacts tab while extraction is running
 - Emails are extracted from the `GetAssistiveFeatures` API response used internally by Google Contacts — changes in this structure may require updates to the extension
 - For personal and educational use only. Please respect Google’s terms of service.
-
-```
